@@ -8,7 +8,7 @@ The background and theoretical design of this tool are available in paper:
 
 This tool is developed using The Java Pairing-Based Cryptography Library [JPBC](http://gas.dia.unisa.it/projects/jpbc/#.U3vExPldV8E). All required JPBC jars are already included in the project folder. You can directly use [Maven](http://maven.apache.org/) to setup this tool.
 
-Note: Codes of this tool are not optimized and some unknown bugs may exist, please feel free to contact me (jxyuan@ualr.edu) if you have any questions and suggestions. 
+Note: This tool may have some unknown bugs, please feel free to contact me (jxyuan@ualr.edu) if you have any questions and suggestions. 
 
 
 
@@ -28,19 +28,18 @@ mvn install:install-file -Dfile=jna-3.2.5.jar -DgroupId=it.unisa.dia.gas -Dartif
 
 Basic Usage
 ------------------
-1. To use this software for remote data integrity audit, the user first need to generate the public keys and master keys for 
-   the system with the "KeyGen" class. User should set path to save his/her keys.
+1. To use this software for remote data integrity auditing, the user first need to generate the public keys and master       keys for the system with the "KeyGen" class. User should set path to save his/her keys.
  
-2. By using the "FileSetup", use can process the file for storage to generate the corresponding signatures and data blocks.
+2. By using the "FileSetup", use can process the file for storage and generate the corresponding signatures and data    blocks.
 
-3. To perform an audit, any entity with the public key can generate the challenge message with the "Challenge" class.
+3. To perform an integrity auditing, any entity with the public key can generate the challenge message with the "Challenge" class.
 
 4. On receiving the challenge message and public keys, the storage server with data block should be able to generate the 
    proof information.
 
-5. The final integrity check can be performed by the auditing entity with the "Verification" Class.
+5. The final integrity verification can be performed by the auditing entity with the "Verification" Class.
 
 
 Test Cases
 ------------------
-Simple unit tests for all important classes and functions are created in the project's test folder.
+Simple unit tests for all important classes and functions are provided in the project's test folder.
